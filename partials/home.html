@@ -1,0 +1,46 @@
+<header>
+  <h1>Play with Watson</h1>
+</header>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="results-header"><i class="fa fa-trophy"></i>Winners History</h3>
+      <div class="col-md-4">
+        <ul class="results">
+          <li ng-repeat="result in results track by $index">
+            <img ng-show="result === 'Sherlock'" src="/images/Sherlock.jpg" />
+            <img ng-show="result === 'Watson'" src="/images/Watson-small.png" />
+            <span ng-class="{'padding-left-large': result === 'Tie'}">
+              {{result}}
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="watson-area">
+        <img src="/images/Watson.png" alt="" />
+        <div>
+          <i ng-show="watsonChoiceLoader" class="fa fa-circle-o-notch fa-spin icon"></i>
+          <div class="icon">
+            <i class="fa fa-hand-{{watsonChoiceResult}}-o fa-rotate-180"></i>
+          </div>
+        </div>
+      </div>
+      <div class="player-area clearfix">
+        <div class="col-md-4" ng-click="play('rock')" title="Rock">
+          <i class="fa fa-hand-rock-o"></i>
+        </div>
+        <div class="col-md-4" ng-click="play('paper')" title="Paper">
+          <i class="fa fa-hand-paper-o"></i>
+        </div>
+        <div class="col-md-4" ng-click="play('scissors')" title="Scissors">
+          <i class="fa fa-hand-scissors-o"></i>
+        </div>
+      </div>
+      <h2 class="center">Choose Sherlock!</h2>
+    </div>
+  </div>
+</section>
+<footer>
+</footer>
